@@ -8,6 +8,9 @@
 
 #import "ZPMainViewController.h"
 #import "ZPActionSheet.h"
+
+#define SCREEN_WIDTH self.view.bounds.size.width
+#define SCREEN_HEIGHT self.view.bounds.size.height
 @interface ZPMainViewController ()<ZPActionSheetDelegate>
 
 @property (strong, nonatomic) UIButton *actionSheetButton;
@@ -29,8 +32,9 @@
     [self setupDefaultUI];
 }
 - (void)setupUI{
+    
     _actionSheetButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _actionSheetButton.frame = CGRectMake(100, 100, 100, 30);
+    _actionSheetButton.frame = CGRectMake((SCREEN_WIDTH-100)/2, 100, 100, 30);
     [_actionSheetButton setTitle:@"性别设置" forState:UIControlStateNormal];
     [_actionSheetButton setBackgroundColor:[UIColor redColor]];
     [_actionSheetButton addTarget:self action:@selector(popActionSheet) forControlEvents:UIControlEventTouchUpInside];
@@ -39,7 +43,7 @@
 
 - (void)setupDefaultUI{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(100, 300, 100, 30);
+    button.frame = CGRectMake((SCREEN_WIDTH-100)/2, 300, 100, 30);
     [button setTitle:@"默认样式" forState:UIControlStateNormal];
     [button setBackgroundColor:[UIColor redColor]];
     [button addTarget:self action:@selector(defaultActionSheet) forControlEvents:UIControlEventTouchUpInside];
