@@ -64,13 +64,13 @@
 }
 //点击按钮之后执行的代理方法
 - (void)actionSheet:(ZPActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"设置之后执行");
+
     NSString *title = actionSheet.buttonTitleArr[buttonIndex];
     [_actionSheetButton setTitle:title forState:UIControlStateNormal];
 }
 //点击取消执行代理方法，无特殊处理可不写
 - (void)actionSheetCancel:(ZPActionSheet *)actionSheet{
-    NSLog(@"取消设置之后执行，可不实现");
+
 }
 
 - (void)defaultActionSheet{
